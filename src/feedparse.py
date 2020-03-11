@@ -1,5 +1,5 @@
 import feedparser
-from future_call import Future
+from util.future_call import Future
 
 hit_list = [ "https://rss.nytimes.com/services/xml/rss/nyt/US.xml", 
              "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml", 
