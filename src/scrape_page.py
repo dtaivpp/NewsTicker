@@ -1,8 +1,5 @@
-
-import requests
-import urllib.request
-import time
 from bs4 import BeautifulSoup
+import lxml
 
 valid_descendants = {'p', 'li', 'td', 'a'}
 
@@ -13,10 +10,13 @@ def recusive_search(root_element):
             # Possibly a specific scrape per site? 
             print(descendent.text)
 
-def page_scrape(url, *article_identifier):
+
+def page_processer(path, *article_identifier):
     # Pull out the content of the page
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, 'lxml')
+    unwanted = soup.findAll("aside")
+    if (unwanted != None and len(unwanted) > 0 ):
+        unwanted.extract()
     root_article_element = soup.find(article_identifier)
     
     text = recusive_search(root_article_element)
@@ -26,5 +26,5 @@ def page_scrape(url, *article_identifier):
 
 
 if __name__=="__main__":
-    page_scrape("https://www.bloomberg.com/news/articles/2020-03-09/stock-rout-to-continue-in-asia-after-u-s-plunge-markets-wrap?srnd=premium", "div", {"class": "body-copy-v2 fence-body"})
-    page_scrape("https://finance.yahoo.com/news/why-cheering-the-crash-in-oil-prices-like-trump-just-did-is-oversimplifying-the-risks-203530179.html")
+    # Iterate pages in test_data folder
+    pass
