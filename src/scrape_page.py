@@ -13,30 +13,25 @@ def recusive_search(root_element):
             print(descendent.text)
 
 
-def page_processer(path, *article_identifier):
+def page_processer(request):
     # Pull out the content of the page
-    with open(path, 'rb') as openfile:
-        response = pickle.load(openfile)
 
-        soup = BeautifulSoup(response.text, 'lxml')
-        
-        root_article_element = soup.find(article_identifier)
+    soup = BeautifulSoup(request.text, 'lxml')
     
-        text = recusive_search(root_article_element)
+    # Query config file for type of identifier needed
+    root_article_element = soup.find("INSERT IDENTIFIER")
+
+    text = recusive_search(root_article_element)
         
     pass
 
 
 
 if __name__=="__main__":
-    # Iterate pages in test_data folder
-    testdir = os.path.join(os.curdir,'test_data')
+    # Load up test pages
+    from util.load_test_page import get_test_requests
     
-    # iterate over all test docs
-    for filename in os.listdir(testdir):
-        file_parts = os.path.splitext(filename)
+    request_list = get_test_requests()
 
-        # only retrieve .page files
-        if file_parts[len(file_parts)-1] == '.page':
-            page_processer(os.path.join(testdir, filename), 'article')
-    
+    for page in pages_list:
+        grab_meta(page)
