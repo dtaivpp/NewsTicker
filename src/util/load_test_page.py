@@ -17,7 +17,7 @@ def get_test_requests():
             path = os.path.join(testdir, filename)
             with open(path, 'rb') as openfile:
                 request = pickle.load(openfile)
-                request_files.append(page)
+                request_files.append(request)
 
     return request_files
 
