@@ -14,9 +14,9 @@ def query_rss():
     # block until they are all in
     feeds = [future_obj() for future_obj in future_calls]
 
-    entries = []
+    entries = {}
     for feed in feeds:
-        entries.extend( feed[ "items" ] )
+        entries[feed['href']] = feed[ "items" ]
     
     update_db(entries)
 
