@@ -7,6 +7,7 @@ def analyze(text):
     return score
 
 if __name__=="__main__":
+    # Load up test data
     from util.load_test_data import get_test_text
     
     test_text = get_test_text()

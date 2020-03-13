@@ -7,6 +7,7 @@ from util.domain_tools import extract_domain
 valid_descendants = {'p', 'li', 'td', 'a'}
 
 def recusive_search(root_element):
+    '''Find the text values of all article elements'''
     for descendent in root_element.descendants:
         if descendent.name in valid_descendants:
             # Need a better way to isolate releated elements? 
@@ -33,6 +34,7 @@ def element_to_target(url):
 
 
 def page_processer(request):
+    '''Returns Article Text'''
     # Pull out the content of the page
     article_identifier = element_to_target(request.url)
 
@@ -43,8 +45,7 @@ def page_processer(request):
 
     text = recusive_search(root_article_element)
         
-    pass
-
+    return text
 
 
 if __name__=="__main__":
