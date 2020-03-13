@@ -2,12 +2,11 @@
 import requests
 import urllib.request
 import time
-import lxml
 import pickle
 import random
 import os
 from datetime import datetime
-from urllib.parse import urlparse
+from util.domain_tools import extract_domain
 
 random.seed(time.time())
 
@@ -92,16 +91,6 @@ def generate_headers():
         'user-agent': user_agent,
     }
     return headers
-
-def extract_domain(url, remove_http=True):
-    '''Return the domain name'''
-    uri = urlparse(url)
-    if remove_http:
-        domain_name = f"{uri.netloc}"
-    else:
-        domain_name = f"{uri.netloc}://{uri.netloc}"
-    return domain_name
-
 
 def generate_filename(url):
     '''Create a filename for the path formatted domain + datetime'''
