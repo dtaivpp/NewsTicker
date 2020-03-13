@@ -134,4 +134,5 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-# test_data/
+test_data/pages/
+test_data/text/
