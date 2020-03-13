@@ -13,7 +13,7 @@ def _get_test_data(path, loader):
         if filename != '.tmp':
             path = os.path.join(path, filename)
             with open(path, 'rb') as openfile:
-                files = loader(openfile)
+                files.append(loader(openfile))
 
     return files
     
