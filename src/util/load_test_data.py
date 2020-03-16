@@ -1,10 +1,15 @@
 import os
 import pickle
 
+
 def _get_test_data(path, loader):
     '''Returns a list of objects formatted
-    in whatever mannter the loader function defines
-    eg. return data.read()
+    in whatever manner the loader function defines
+    eg:
+    def load(file):
+        return file.read()
+    
+    _get_test_data("C:\\Some\\Path", load)
     '''
 
     files = []
@@ -12,14 +17,15 @@ def _get_test_data(path, loader):
     # iterate over all test docs
     for filename in os.listdir(path):
 
-        # only retrieve .page files
+        # only retrieve data files
         if filename != '.tmp':
             path = os.path.join(path, filename)
             with open(path, 'rb') as openfile:
                 files.append(loader(openfile))
 
     return files
-    
+
+
 def get_test_pages():
     '''Returns List of Sample Page Request Objects'''
     # Iterate pages in test_data folder
@@ -29,7 +35,7 @@ def get_test_pages():
         return pickle.load(request)
 
     return _get_test_data(testdir, load)
- 
+
 
 def get_test_text():
     '''Returns List of Sample Article Texts'''
