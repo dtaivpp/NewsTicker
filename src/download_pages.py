@@ -19,7 +19,7 @@ def generate_filename(url):
     cwd = os.getcwd()
     domain_name = extract_domain(url)
     currdate = str(datetime.now())
-    filename = os.path.join("test_data", domain_name + "_" + currdate)
+    filename = os.path.join("test_data","pages", domain_name + "_" + currdate)
     filename = filename.replace(':', '_')
     return filename + ".page"
 
@@ -30,7 +30,6 @@ def page_download(url):
     outfile = generate_filename(url)
     with open(outfile, 'wb+') as pickle_file:
         pickle.dump(response, pickle_file)
-    
 
 
 if __name__=="__main__":
