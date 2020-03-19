@@ -19,8 +19,8 @@ def _get_test_data(path, loader):
 
         # only retrieve data files
         if filename != '.tmp':
-            path = os.path.join(path, filename)
-            with open(path, 'rb') as openfile:
+            _path = os.path.join(path, filename)
+            with open(_path, 'rb') as openfile:
                 files.append(loader(openfile))
 
     return files
