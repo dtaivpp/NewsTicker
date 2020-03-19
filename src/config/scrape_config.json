@@ -1,0 +1,42 @@
+{
+    "finance.yahoo.com": {
+        "root_element": [
+            "div",
+            {
+                "class": "canvas-body"
+            }
+        ],
+        "unwanted_elements": [
+            [
+                "aside"
+            ],
+            [
+                "div", {"class": "Ov(h)"}
+            ], 
+            [
+                "div", {"class": "read-more"}
+            ]
+        ],
+        "text_elements": [
+            [
+                "p", {"class": "canvas-text"}
+            ],
+            [
+                "li"
+            ],
+            [
+                "td"
+            ]
+        ]
+    },
+    "yahoo.com": {
+        "div": {
+            "class": "cass-body"
+        }
+    },
+    "nytimes.com": {
+        "section": {
+            "class": "meteredContent"
+        }
+    }
+}
