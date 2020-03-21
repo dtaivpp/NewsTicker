@@ -1,5 +1,6 @@
 import feedparser
 from util.future_call import Future
+from util.load_test_data import get_test_rss
 
 hit_list = [ "https://rss.nytimes.com/services/xml/rss/nyt/US.xml", 
              "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml", 
@@ -22,6 +23,10 @@ def query_rss():
 
 def update_db(recordset):
     '''Find which articles are new and send to db'''
+    pass
+
+def update_file(rss_data):
+    prev_data = {}
     pass
 
 if __name__=="__main__":
