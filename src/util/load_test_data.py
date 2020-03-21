@@ -47,6 +47,15 @@ def get_test_text():
     
     return _get_test_data(testdir, load)
 
+def get_test_rss():
+    '''Returns List of Sample Article Texts'''
+    # Iterate pages in test_data folder
+    testdir = os.path.join(os.curdir,'test_data', 'rss')
+    
+    def load(file):
+        return file.read() 
+    
+    return _get_test_data(testdir, load)
 
 if __name__ == "__main__":
     page = get_test_pages()
