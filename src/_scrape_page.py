@@ -72,7 +72,7 @@ def get_text(page, identifier_list):
     page_text = []
     for identifyer in identifier_list:
         for element in page.find_all(*identifyer):
-            page.append(element.text)
+            page_text.append(element.text)
     
     return page_text
 
@@ -125,3 +125,4 @@ if __name__=="__main__":
     for page in request_list:
         text = page_processer(page)
         print(text)
+        print("".join(['--'for i in range(20)])
