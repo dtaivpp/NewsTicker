@@ -11,32 +11,137 @@
                 "aside"
             ],
             [
-                "div", {"class": "Ov(h)"}
-            ], 
+                "div",
+                {
+                    "class": "Ov(h)"
+                }
+            ],
             [
-                "div", {"class": "read-more"}
+                "div",
+                {
+                    "class": "read-more"
+                }
             ]
         ],
         "text_elements": [
             [
-                "p", {"class": "canvas-text"}
+                "p",
+                {
+                    "class": "canvas-text"
+                }
             ],
             [
                 "li"
             ],
             [
                 "td"
+            ],
+            [
+                "h1"
+            ],
+            [
+                "h2"
+            ],
+            [
+                "h3"
+            ],
+            [
+                "h4"
+            ],
+            [
+                "h5"
             ]
         ]
     },
-    "yahoo.com": {
-        "div": {
-            "class": "cass-body"
-        }
+    "news.yahoo.com": {
+        "root_element": [
+            "div",
+            {
+                "class": "caas-body"
+            }
+        ],
+        "unwanted_elements": [],
+        "text_elements": [
+            [
+                "p"
+            ],
+            [
+                "li"
+            ],
+            [
+                "td"
+            ],
+            [
+                "h1"
+            ],
+            [
+                "h2"
+            ],
+            [
+                "h3"
+            ],
+            [
+                "h4"
+            ],
+            [
+                "h5"
+            ]
+        ]
     },
     "nytimes.com": {
         "section": {
             "class": "meteredContent"
         }
+    },
+    "bloomburg.com": {
+        "root_element": [
+            "div",
+            {
+                "class": "body-copy-v2"
+            }
+        ],
+        "unwanted_elements": [
+            [
+                "aside"
+            ],
+            [
+                "div",
+                {
+                    "class": "trashline"
+                }
+            ],
+            [
+                "div",
+                {
+                    "class": "in-article-ad-dummy"
+                }
+            ]
+        ],
+        "text_elements": [
+            [
+                "p"
+            ],
+            [
+                "li"
+            ],
+            [
+                "td"
+            ],
+            [
+                "h1"
+            ],
+            [
+                "h2"
+            ],
+            [
+                "h3"
+            ],
+            [
+                "h4"
+            ],
+            [
+                "h5"
+            ]
+        ]
     }
 }
