@@ -115,7 +115,7 @@ user_agents = [
 
 def get_random_ua():
     '''Return Random UserAgent'''
-    random_num = random.randint(0, len(user_agents))
+    random_num = random.randint(0, len(user_agents)-1)
     return user_agents[random_num]
 
 
